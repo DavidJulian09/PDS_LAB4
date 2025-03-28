@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.signal import butter, filtfilt
 
 # Cargar la señal EMG desde un archivo CSV
-file_path = "simulated_daq_data.csv"  # Asegúrate de que el archivo esté en el mismo directorio
+file_path = "emg_signal.csv"  # Asegúrate de que el archivo esté en el mismo directorio
 df = pd.read_csv(file_path)
 
 # Extraer datos
