@@ -5,13 +5,13 @@ Para la presente práctica se tuvo como objetivo la toma y análisis de una señ
 
 ## 1. CIRCUITO Y UBCACIÓN ELECTRODOS
 
-![Image](Imagenes/circuito.png)
+![Image](Imágenes/circuito.png)
 
-![Image](Imagenes/posicion1.png)
+![Image](Imágenes/posicion1.png)
 
-![Image](Imagenes/posicion2.png)
+![Image](Imágenes/posicion2.png)
 
-![Image](Imagenes/todo.png)
+![Image](Imágenes/todo.png)
 
 ## 2. TOMA Y GUARDADO SEÑALES EMG EN MATLAB
 
@@ -81,5 +81,5 @@ Las variables creadas (time - signal), sirven para almacenar tanto los datos tem
 
 Se prosigue con un bucle de un minuto, valor establecido en la configuración, donde se capturan los datos en un formato matricial, en donde se calcula el tiempo transcurrio con "datetime", almacenando los datos de los vectores; junto con las actualizaciones dinámicas permite el monitoreo de la señal en tiempo real, sin retrasos. Al final, los datos se guardan en una tabla excel de nombre "emg_signal.csv", delimitando los tiempos y voltajes en columnas respectivamente, el uso de "writetable" permite la compatibilidad con excel tanto con phyton, para su posterior análsis.
 
-## 3. PROGRAMACIÓN PHYTON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
+## 3. PROGRAMACIÓN PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
 
