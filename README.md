@@ -83,3 +83,7 @@ Se prosigue con un bucle de un minuto, valor establecido en la configuración, d
 
 ## 3. PROGRAMACIÓN PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
 
+
+
+## 4. Análisis Estadístico de Señales
+
