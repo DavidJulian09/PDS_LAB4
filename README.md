@@ -53,7 +53,7 @@ Primero, iniciamos definiendo los parámetros básicos para la adquisición de d
 
 Las variables creadas (time - signal), sirven para almacenar tanto los datos temporales como los de amplitud. Una vez definidas, se prepara la visualización dinámica, cabe resaltar límites de rango, ya que si es demasiado grande podria o pequeña podria generar una dificultad en la visualización de la señal tomada. Tal como se muestra en la imágen se muestra se ven llos rangos de lo ejes estaablecidos con anterioridad, junto con la señal EMG tomada por los electrodos.
 
-### c. Bucle de Adquisición y Guardado de Datos
+### c . Bucle de Adquisición y Guardado de Datos
 
     while seconds (datatime('now') - startTime) < tiempo_muestras
 
