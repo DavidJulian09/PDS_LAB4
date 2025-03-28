@@ -5,13 +5,13 @@ Para la presente práctica se tuvo como objetivo la toma y análisis de una señ
 
 ## 1. CIRCUITO Y UBCACIÓN ELECTRODOS
 
-![Image](Imágenes/circuito.jpg)
+![Image](Imagenes/circuito.jpg)
 
-![Image](Imágenes/posicion1.jpg)
+![Image](Imagenes/posicion1.jpg)
 
-![Image](Imágenes/posicion2.jpg)
+![Image](Imagenes/posicion2.jpg)
 
-![Image](Imágenes/todo.jpg)
+![Image](Imagenes/todo.jpg)
 
 ## 2. TOMA Y GUARDADO SEÑALES EMG EN MATLAB
 
