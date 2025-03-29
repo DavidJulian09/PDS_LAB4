@@ -10,10 +10,13 @@ Para la presente práctica se tuvo como objetivo la toma y análisis de una señ
 Bueno aca tenemos el circuto completo armado, el cual esta conformado primeramente por la tarjeta de procesamiento stm32 que esta dandole energia a nuestro modulo AD8232 el cual se maneja con (3.3v), este se utilizo principalmente para captar las señales electromiograficas producidas por el enfuerzo primario el cual era la fuerza del musculo  al extender el brazo o al hacer fuerza  y la fatiga producida por el primer esfuerzo , esta que a su vez fue capatada y guardada para asi mismo analizar la señal y como era el cambio entre el inicio de la fuerza la cual se hizo apretando una dona de 5 kilogramos y la fatiga despues de apretarla repetidamente durante 60 segundos.
 
 ![Image](Imagenes/posicion1.jpg)
+Aca esta la portura de cada uno de los electrodos los cuales fueron tres, el verde que esta en la siguiente imagen el cual es la tierra y los otros dos (rojo y el amarillo) que son los resposables de cada derivacion tanto dertecha como izquierda , estos fueron colocados especificamnete donde la irrigacion o fuerza del musculo, en este caso se sentia mas que en otra parte del antebrazo asi mismo el electrodo derecho que era el rojo se corrio un poco para evitar que tomara o hubiera una interrupcion de la señal por el pulso cardiaco ya que en esta parte del antebrazo pasan venas donde se puede tomar el pulso.
 
 ![Image](Imagenes/posicion2.jpg)
+Aca encontramos ya el eletrodo verde que este fue nuestra referencia de tierra el cual se puso en la parte anterior del brazo debajo del codo para asi mismo evitar la interrupcion de la señal por otras fuentes como el pulso cardico o un movimento brusco que dañara la señal o despegara el electrodo.
 
 ![Image](Imagenes/todo.jpg)
+Esta ya es la conexion total de nuestro cicuito junto los electrodos puestos correctamnete en cada uno de los lugares escogidos y el DAQ el cual fue el que nos permitio captar la señal de la fuerza y fatiga del musculo con el modulo AD8232, guardando la señal y perimitiendo verla en mathlab y asi mismo  ya filtrada en python con sus respectivas graficas. 
 
 ## 2. TOMA Y GUARDADO SEÑALES EMG EN MATLAB
 
