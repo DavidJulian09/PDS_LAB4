@@ -94,5 +94,6 @@ Se prosigue con un bucle de un minuto, valor establecido en la configuración, d
 
 
 
+
 ## 4. ANÁLISIS ESTADÍSTICO DE LA SEÑAL
 
