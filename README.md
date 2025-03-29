@@ -19,6 +19,60 @@ Aca encontramos ya el eletrodo verde que este fue nuestra referencia de tierra e
 Esta ya es la conexion total de nuestro cicuito junto los electrodos puestos correctamnete en cada uno de los lugares escogidos y el DAQ el cual fue el que nos permitio captar la señal de la fuerza y fatiga del musculo con el modulo AD8232, guardando la señal y perimitiendo verla en mathlab y asi mismo  ya filtrada en python con sus respectivas graficas.
 
 ## 2. TOMA Y GUARDADO SEÑALES EMG EN PYTHON
+### a. librerias utilizadas 
+
+     import pandas as pd
+     import numpy as np
+     import matplotlib.pyplot as plt
+     from scipy.signal import butter, filtfilt
+
+Bueno aca tenemos las librerias utlizadas en nuestro codigo de python empezando por  pandas (pd)esta fue utilizada para cargar y manipular datos desde un archivo CSV el cual es un archivo de texto que almacena datos separados por comas, despues tenemos la libreria numpy (np) esta es la encargada de proporcionar operaciones matemáticas y manejo de arreglos en ella, matplotlib.pyplot (plt) esta se ulizo ya que esta nos permite la  visualización de gráficos y las ultimas dos que son scipy.signal.butter la cual su funcion es el diseño de filtros Butterworth que son los filtros pasa-bajos y pasa-altos y scipy.signal.filtfilt que esta es la libreria que aplica un  filtrado sin distorsión de fase.
+
+### b. CARGA DE DATOS, EXTRANCCION DE SEÑAL Y ESTIMULACION EN LA FRECUENCIA DE MUESTREO 
+
+     file_path = "emg_signal.csv"  
+     df = pd.read_csv(file_path)
+     tiempo = df.iloc[:, 0]  # Primera columna (Tiempo)
+     voltaje = df.iloc[:, 1]  # Segunda columna (Voltaje)
+
+     fs_estimates = 1 / tiempo.diff().dropna().unique()
+     fs_mean = fs_estimates.mean()
+
+La carga de datos y extranccion de señal se hizo apartir de primero pd.read_csv el cual es el encargdo de cargar el archivo CSV en un DataFrame (df) este es una estructura de datos bidimensional que se usa en para organizar y analisar los datos , despues de utilizo df.iloc[:, 0] este es el encargdo de extraer la primera columna de tiempo en  (tiempo - segundos) y por ultimo df.iloc[:, 1]el cual extrae la segunda columna que es la columna encargda del (voltaje de la señal EMG)desde el modulo AD8232.
+
+Para la estimulacion de la frecuencia tenemos tiempo.diff() este es el que permite calcular las diferencias entre muestras consecutivas que son los (intervalos de tiempo), dropna() este es el que elimina valores NaN (primera diferencia no existe) valores que por lo general no son numeros, unique() este es el que elimina duplicados osea elimina los intervalos constantes que identifica, 1 / ..  este convierte intervalos en frecuencias (Hz) y fs_mean el cual promedia las frecuencias estimadas (Hz).
+
+### c. SEÑAL ORIGINAL, DISEÑO Y APLICACION DE LOS FILTROS 
+
+     plt.figure(figsize=(10, 4))
+     plt.plot(tiempo, voltaje, label="Señal EMG", color="b")
+     plt.xlabel("Tiempo (s)")
+     plt.ylabel("Voltaje (V)")
+     plt.title("Señal EMG Original")
+     plt.legend()
+     plt.grid(True)
+     plt.show()
+Para la señal original se utilizo plt.plotesta es la que grafica la señal EMG en el dominio del tiempo, plt.xlabel y  plt.ylabel este es el encargado de etiquetar los ejes y plt.grid este es el que nos permite mostrar una cuadrícula para una mejor lectura.
+
+### DISEÑO
+
+     def butterworth_filter(data, cutoff, fs, filter_type, order=4):
+     nyquist = 0.5 * fs  # Frecuencia de Nyquist
+     normal_cutoff = cutoff / nyquist
+     b, a = butter(order, normal_cutoff, btype=filter_type, analog=False)
+     return filtfilt(b, a, data)
+
+Aca tenemos nyquist = 0.5 * fs el cual se encarga de calcular la frecuencia de Nyquist (máxima frecuencia detectable) en nuestra muestra, 
+normal_cutoff = cutoff / nyquist que esta ayuda a normalizar la frecuencia de corte, butter() enarcagda de diseñar coeficientes del filtro Butterworth que son los pasa altos- pasa bajos y filtfilt() que aplica un filtrado sin retraso de fase el cual es (bidireccional).
+### APLICACION 
+
+     filtered_high = butterworth_filter(voltaje, 20, fs_mean, 'high')  # Pasa-altas (20 Hz)
+     filtered_signal = butterworth_filter(filtered_high, 60, fs_mean, 'low')  # Pasa-bajas (60 Hz)
+     
+Aca tenemos la aplicacion de los filtros butterworth que como se dijo antes son dos el primerp Filtro pasa-altas (20 Hz) este es el que elimina los componentes de baja frecuencia (artefactos de movimiento) y el segundo que es el filtro pasa-bajas (60 Hz) este ya suaviza como tal la señal, lo hace eliminando ruido de altas frecuencias.
+
+### d. SEÑAL FILTRADA VS LA ORIGINAL- VENTANA DE HAMMING
+
 
 ## 3. TOMA Y GUARDADO SEÑALES EMG EN MATLAB
 
