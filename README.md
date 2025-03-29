@@ -86,6 +86,7 @@ Se prosigue con un bucle de un minuto, valor establecido en la configuración, d
 ![EMG_original](https://github.com/user-attachments/assets/5e4ab7ad-4fce-4747-b4f6-7c01121dbe9a)
 ![Espectro_EMG](https://github.com/user-attachments/assets/15f900cc-3b14-41c6-8c2f-052029591fe2)
 ![Filtrada](https://github.com/user-attachments/assets/4caf6e03-565a-4b94-974a-910b5f742c92)
+![Hamming](https://github.com/user-attachments/assets/00ace864-3fef-4038-ac92-0c5b4c8f3bc0)
 
 
 
