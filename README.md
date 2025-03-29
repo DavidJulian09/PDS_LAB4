@@ -7,6 +7,7 @@ Para la presente práctica se tuvo como objetivo la toma y análisis de una señ
 ## 1. CIRCUITO Y UBCACIÓN ELECTRODOS
 
 ![Image](Imagenes/circuito.jpg)
+Bueno aca tenemos el circuto completo armado, el cual esta conformado primeramente por la tarjeta de procesamiento stm32 que esta dandole energia a nuestro modulo AD8232 el cual se maneja con (3.3v), este se utilizo principalmente para captar las señales electromiograficas producidas por el enfuerzo primario el cual era la fuerza del musculo  al extender el brazo o al hacer fuerza  y la fatiga producida por el primer esfuerzo , esta que a su vez fue capatada y guardada para asi mismo analizar la señal y como era el cambio entre el inicio de la fuerza la cual se hizo apretando una dona de 5 kilogramos y la fatiga despues de apretarla repetidamente durante 60 segundos.
 
 ![Image](Imagenes/posicion1.jpg)
 
