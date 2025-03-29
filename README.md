@@ -172,7 +172,19 @@ La ventana ya fue hecha a partir de primero samples_per_window que es el número
 
 Primero se utilizo np.fft.fft esta con el fin de calcular la FFT en cada ventana de hammingh, np.fft.fftfreq esta como tal es la que genera las frecuencias correspondientes a la señal dada, half_spectrum esta solo toma  frecuencias positivas (simetría de FFT real) y np.abs esta es la que nos permite obtener la magnitud de espectro.
 
+### f. VISUALIZACIÓN ESPECTRO DE FRECUENCIA
 
+    plt.figure(figsize=(10, 4))
+    for i in range(min(5, len(fft_magnitudes))):
+         plt.plot(frequencies, fft_magnitudes[i], label=f'Ventana {i+1}')
+    plt.xlabel("Frecuencia (Hz)")
+    plt.ylabel("Magnitud")
+    plt.title("Espectro de Frecuencia de la Señal EMG")
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
+Finalmente, se muestra el conntendo frecuencial de las primeras 5 ventanas, lo que permite identificar componentes dominantes, tal como las frecuencias propias de la actividad muscular, la cual oscila alrededor de los valores de 50 Hz aproximadamente.
 
 ## 4. GRAFICACION PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
 
