@@ -16,9 +16,11 @@ Aca esta la portura de cada uno de los electrodos los cuales fueron tres, el ver
 Aca encontramos ya el eletrodo verde que este fue nuestra referencia de tierra el cual se puso en la parte anterior del brazo debajo del codo para asi mismo evitar la interrupcion de la señal por otras fuentes como el pulso cardico o un movimento brusco que dañara la señal o despegara el electrodo.
 
 ![Image](Imagenes/todo.jpg)
-Esta ya es la conexion total de nuestro cicuito junto los electrodos puestos correctamnete en cada uno de los lugares escogidos y el DAQ el cual fue el que nos permitio captar la señal de la fuerza y fatiga del musculo con el modulo AD8232, guardando la señal y perimitiendo verla en mathlab y asi mismo  ya filtrada en python con sus respectivas graficas. 
+Esta ya es la conexion total de nuestro cicuito junto los electrodos puestos correctamnete en cada uno de los lugares escogidos y el DAQ el cual fue el que nos permitio captar la señal de la fuerza y fatiga del musculo con el modulo AD8232, guardando la señal y perimitiendo verla en mathlab y asi mismo  ya filtrada en python con sus respectivas graficas.
 
-## 2. TOMA Y GUARDADO SEÑALES EMG EN MATLAB
+## 2. TOMA Y GUARDADO SEÑALES EMG EN PYTHON
+
+## 3. TOMA Y GUARDADO SEÑALES EMG EN MATLAB
 
 ### a. Configuración del DAQ
 
@@ -86,7 +88,7 @@ Las variables creadas (time - signal), sirven para almacenar tanto los datos tem
 
 Se prosigue con un bucle de un minuto, valor establecido en la configuración, donde se capturan los datos en un formato matricial, en donde se calcula el tiempo transcurrio con "datetime", almacenando los datos de los vectores; junto con las actualizaciones dinámicas permite el monitoreo de la señal en tiempo real, sin retrasos. Al final, los datos se guardan en una tabla excel de nombre "emg_signal.csv", delimitando los tiempos y voltajes en columnas respectivamente, el uso de "writetable" permite la compatibilidad con excel tanto con phyton, para su posterior análsis.
 
-## 3. PROGRAMACIÓN PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
+## 4. GRAFICACION PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
 
 ![EMG_original](https://github.com/user-attachments/assets/5e4ab7ad-4fce-4747-b4f6-7c01121dbe9a)
 
