@@ -83,14 +83,23 @@ Las variables creadas (time - signal), sirven para almacenar tanto los datos tem
 Se prosigue con un bucle de un minuto, valor establecido en la configuración, donde se capturan los datos en un formato matricial, en donde se calcula el tiempo transcurrio con "datetime", almacenando los datos de los vectores; junto con las actualizaciones dinámicas permite el monitoreo de la señal en tiempo real, sin retrasos. Al final, los datos se guardan en una tabla excel de nombre "emg_signal.csv", delimitando los tiempos y voltajes en columnas respectivamente, el uso de "writetable" permite la compatibilidad con excel tanto con phyton, para su posterior análsis.
 
 ## 3. PROGRAMACIÓN PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
+
 ![EMG_original](https://github.com/user-attachments/assets/5e4ab7ad-4fce-4747-b4f6-7c01121dbe9a)
+
 Esta gráfica representa una señal de electromiografia en tiempo real, en la parte del eje Y se representa el voltaje el cual oscila aproximadamente  entre 0 v y 2.5 v lo que sugiere contracción musculares y en el eje X el tiempo el  cual se mide a lo largo de 60  segundos lo que permitió una captura completa de la contracción muscular, esta señal tiene una variación de amplitud lo cual refleja actividad muscular moderada, esta representa una componente de alta frecuencia lo cual es característico de las señales EMG ya que se activan varias fibras del musculo y se genera la contracción, también se puede ver una caída en el eje X cuando esta en 20 segundos ya que esto representa relajación del musculo.
+
+
 ![Espectro_EMG](https://github.com/user-attachments/assets/15f900cc-3b14-41c6-8c2f-052029591fe2)
+
 Esta grafica representa como se distribuyen las diferentes frecuencias en la señal donde se puede evidenciar la aplicación de  5 ventanas de análisis  para obtener el comportamiento espectral en distintos segmentos de tiempo, en el eje X se encuentra la frecuencia en Hz que va desde o Hz hasta 70 Hz y en el eje Y se tiene la magnitud la cual representa la intensidad relativa de cada componente, la mayor parte de la energía se encuentra entre los 20 Hz y los 60 Hz lo cual concuerda a las señales musculares, cada ventana presenta variaciones pequeñas en las frecuencias mas dominantes por lo que se puede decir que hay cambios en la activación muscular a lo largo del tiempo, la ventana roja y morada presentan picos mas altos entre los 30Hz y los 40 Hz por lo que se puede decir que están relacionadas con las contracciones musculares mas intensas
 
 ![Filtrada](https://github.com/user-attachments/assets/4caf6e03-565a-4b94-974a-910b5f742c92)
+
 Esta gráfica compara la señal de la electromiografia, la primera es la señal original los cuales son datos sin ningún tipo de proceso tanto ruido como amplitud y la segunda es la señal filtrada los cuales ya son datos procesados con reducción de ruido, en el eje X se presenta el tiempo en segundos el cual dura 60 segundos y en el eje Y se presenta el voltaje donde se puede ver la reducción en la amplitud de la señal después del filtrado, comparando el antes y el después del filtrado, la original tiene un desplazamiento positivo el cual me mantiene en 1.5 V y la señal filtrada esta centrada en 0 V lo que indica que tiene filtros; la señal original tiene picos altos y caída muy largas por lo que con el filtrado los picos han disminuido 
+
+
 ![Hamming](https://github.com/user-attachments/assets/00ace864-3fef-4038-ac92-0c5b4c8f3bc0)
+
 Esta gráfica representa señales procesadas con una ventana de Hamming por lo que indica que se aplico una técnica de segmentación y suavizado en la señal, en el eje X se presentan las muestras que son los puntos de cada ventana analizada y en el eje Y se presenta el voltaje el cual esta en un rango de -0.2 V y 0.2 V donde esta presenta la variación de la señal en cada ventana donde cada ventana tiene un color para su identificación, la ventana de Hamming permite observar como la señal de la EMG  se comporta en fragmentos de tiempo específicos aparte de esto se conserva información clave sobre la actividad muscular mientras este reduce efectos que no se desean, es importante que tenga una amplitud moderada ya que es lo que se espera de una señal filtrada 
 
 
