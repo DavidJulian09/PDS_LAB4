@@ -86,6 +86,30 @@ Las variables creadas (time - signal), sirven para almacenar tanto los datos tem
 
 Se prosigue con un bucle de un minuto, valor establecido en la configuración, donde se capturan los datos en un formato matricial, en donde se calcula el tiempo transcurrio con "datetime", almacenando los datos de los vectores; junto con las actualizaciones dinámicas permite el monitoreo de la señal en tiempo real, sin retrasos. Al final, los datos se guardan en una tabla excel de nombre "emg_signal.csv", delimitando los tiempos y voltajes en columnas respectivamente, el uso de "writetable" permite la compatibilidad con excel tanto con phyton, para su posterior análsis.
 
+### d. SEÑAL FILTRADA VS LA ORIGINAL- VENTANA DE HAMMING
+
+     plt.figure(figsize=(10, 4))
+     plt.plot(tiempo, voltaje, label="Señal Original", alpha=0.5, color="gray")
+     plt.plot(tiempo, filtered_signal, label="Señal Filtrada", color="blue")
+     plt.xlabel("Tiempo (s)")
+     plt.ylabel("Voltaje (V)")
+     plt.title("Señal EMG antes y después del filtrado")
+     plt.legend()
+     plt.grid(True)
+     plt.show()
+
+Aca ya tenemos la visualizacion  tanto de la señal1 que es la  original esta es de coloir  (gris) y contiene ruido este es un sonido molesto o no deseado tambien teine un artefacto que es una distorsión o error en una imagen o es te caso sonido, la señal 2 que es la 
+señal filtrada de solor (azul) esta ya es una señal mas limpia, ya que esta conserva los  componentes relevantes de frecuencia en (20-60 Hz).
+
+     window_size = 1  # 1 segundo por ventana
+     samples_per_window = int(window_size * fs_mean)
+     windows = [filtered_signal[i * samples_per_window:(i + 1) * samples_per_window] 
+           for i in range(num_windows)]
+     windowed_signals = [w * np.hamming(len(w)) for w in windows]
+
+La ventana ya fue hecha a partir de primero samples_per_window que es el número de muestras de tiempo que fue en un 1 segundo, windows esta es la que divide la señal en segmentos de tiempon tambien en un 1 segundo y np.hamming() que es la que aplica la  ventana de Hamming para reducir fugas espectrales en FFT que son los errores que se producen cuando se analizan segmentos de señales que no coinciden con un número entero de ciclos. 
+
+
 ## 3. PROGRAMACIÓN EMG EN PYTHON
 ### a. librerias utilizadas 
 
