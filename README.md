@@ -84,7 +84,9 @@ Se prosigue con un bucle de un minuto, valor establecido en la configuración, d
 
 ## 3. PROGRAMACIÓN PYTHON: ANÁLISIS, FILTRADO Y GRAFICACIÓN DE SEÑAL
 ![EMG_original](https://github.com/user-attachments/assets/5e4ab7ad-4fce-4747-b4f6-7c01121dbe9a)
+Esta gráfica representa una señal de electromiografia en tiempo real, en la parte del eje Y se representa el voltaje el cual oscila aproximadamente  entre 0 v y 2.5 v lo que sugiere contracción musculares y en el eje X el tiempo el  cual se mide a lo largo de 60  segundos lo que permitió una captura completa de la contracción muscular, esta señal tiene una variación de amplitud lo cual refleja actividad muscular moderada, esta representa una componente de alta frecuencia lo cual es característico de las señales EMG ya que se activan varias fibras del musculo y se genera la contracción, también se puede ver una caída en el eje X cuando esta en 20 segundos ya que esto representa relajación del musculo.
 ![Espectro_EMG](https://github.com/user-attachments/assets/15f900cc-3b14-41c6-8c2f-052029591fe2)
+
 ![Filtrada](https://github.com/user-attachments/assets/4caf6e03-565a-4b94-974a-910b5f742c92)
 ![Hamming](https://github.com/user-attachments/assets/00ace864-3fef-4038-ac92-0c5b4c8f3bc0)
 
